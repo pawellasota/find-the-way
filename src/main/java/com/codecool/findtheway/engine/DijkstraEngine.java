@@ -14,7 +14,6 @@ import java.util.Set;
 
 public class DijkstraEngine {
 
-    private List<Vertex> nodes;
     private List<Edge> edges;
     private Set<Vertex> settledNodes;
     private Set<Vertex> unSettledNodes;
@@ -22,7 +21,6 @@ public class DijkstraEngine {
     private Map<Vertex, Integer> distance;
 
     public DijkstraEngine(Graph graph) {
-        this.nodes = new ArrayList<>(graph.getVertexes());
         this.edges = new ArrayList<>(graph.getEdges());
     }
 

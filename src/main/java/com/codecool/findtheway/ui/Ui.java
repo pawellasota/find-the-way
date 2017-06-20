@@ -2,7 +2,6 @@ package com.codecool.findtheway.ui;
 
 
 import com.codecool.findtheway.model.Vertex;
-
 import java.util.List;
 
 public class Ui {

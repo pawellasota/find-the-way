@@ -20,7 +20,7 @@ public class Main {
             List<Vertex> path = dijkstra.getPath(tripReader.getEnd());
             Integer costs = dijkstra.getCosts(path);
             Ui.displayTrip(path, costs);
-        }catch (IOException e) {
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException | IOException | NullPointerException e) {
             e.printStackTrace();
         }
     }

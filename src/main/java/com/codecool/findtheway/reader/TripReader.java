@@ -51,7 +51,7 @@ public class TripReader {
         }
     }
 
-    private void setNodes() throws IOException {
+    private void setNodes() throws IOException, ArrayIndexOutOfBoundsException, NumberFormatException {
         List<String> readedFileinList = this.readFile();
         for (String line : readedFileinList) {
             String[] tripArray = line.split(" ");
@@ -69,7 +69,7 @@ public class TripReader {
         }
     }
 
-    private void setEdges() throws IOException{
+    private void setEdges() throws IOException, ArrayIndexOutOfBoundsException, NumberFormatException{
         List<String> readedFileinList = this.readFile();
         for (String line : readedFileinList) {
             String[] tripArray = line.split(" ");
@@ -78,6 +78,9 @@ public class TripReader {
             }
             Vertex source = getVertexBy(tripArray[0]);
             Vertex destiny = getVertexBy(tripArray[1]);
+            if (!(Integer.valueOf(tripArray[2]).getClass().equals(Integer.class))) {
+                throw new NumberFormatException();
+            }
             int weight = Integer.parseInt(tripArray[2]);
             int costs = Integer.parseInt(tripArray[2]);
             this.edges.add( new Edge(Integer.toString(readedFileinList.indexOf(line)),
