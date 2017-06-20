@@ -11,11 +11,10 @@ import java.util.*;
 
 public class TripReader {
 
-    List<Vertex> nodes = new ArrayList<>();
-    List<Edge> edges = new ArrayList<>();
-    Vertex start;
-    Vertex end;
-
+    private List<Vertex> nodes = new ArrayList<>();
+    private List<Edge> edges = new ArrayList<>();
+    private Vertex start;
+    private Vertex end;
     private String filePath;
 
     public TripReader(String fileName) throws IOException{
@@ -61,10 +60,10 @@ public class TripReader {
                 break;
             }
             if (!this.nodes.contains((this.getVertexBy(tripArray[0])))) {
-                nodes.add(new Vertex(tripArray[0], tripArray[0]));
+                nodes.add(new Vertex(tripArray[0]));
             }
             if (!this.nodes.contains((this.getVertexBy(tripArray[1])))) {
-                nodes.add(new Vertex(tripArray[1], tripArray[1]));
+                nodes.add(new Vertex(tripArray[1]));
             }
         }
     }
@@ -83,8 +82,7 @@ public class TripReader {
             }
             int weight = Integer.parseInt(tripArray[2]);
             int costs = Integer.parseInt(tripArray[2]);
-            this.edges.add( new Edge(Integer.toString(readedFileinList.indexOf(line)),
-                    source, destiny, 0, costs));
+            this.edges.add( new Edge(source, destiny, 0, costs));
         }
     }
 

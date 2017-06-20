@@ -1,5 +1,6 @@
 package com.codecool.findtheway.engine;
 
+
 import com.codecool.findtheway.model.Graph;
 import com.codecool.findtheway.model.Vertex;
 import com.codecool.findtheway.reader.TripReader;
@@ -9,13 +10,11 @@ import java.util.Arrays;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
-
 class DijkstraEngineTest {
 
     private DijkstraEngine dijkstraEngine;
     private TripReader tripReader;
     private Graph graph;
-
 
     @org.junit.jupiter.api.BeforeEach
     void setUp() throws Exception{
@@ -27,9 +26,9 @@ class DijkstraEngineTest {
     @Test
     void testIfGetPathReturnsShortestPath(){
         List<Vertex> expectedPath = new ArrayList<>();
-        expectedPath.addAll(Arrays.asList(new Vertex("Warsaw", "Warsaw"),
-                                          new Vertex("London", "London"),
-                                          new Vertex("Athens", "Athens")));
+        expectedPath.addAll(Arrays.asList(new Vertex("Warsaw"),
+                                          new Vertex("London"),
+                                          new Vertex("Athens")));
         this.dijkstraEngine.execute(this.tripReader.getStart());
         List<Vertex> path = this.dijkstraEngine.getPath(this.tripReader.getEnd());
         assertEquals(expectedPath, path);

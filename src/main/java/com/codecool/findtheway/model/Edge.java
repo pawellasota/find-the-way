@@ -2,14 +2,12 @@ package com.codecool.findtheway.model;
 
 
 public class Edge {
-    private String id;
     private Vertex source;
     private Vertex destination;
     private int weight;
     private int costs;
 
-    public Edge(String id, Vertex source, Vertex destination, int weight, int costs) {
-        this.id = id;
+    public Edge(Vertex source, Vertex destination, int weight, int costs) {
         this.source = source;
         this.destination = destination;
         this.weight = weight;

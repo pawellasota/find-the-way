@@ -2,16 +2,10 @@ package com.codecool.findtheway.model;
 
 
 public class Vertex {
-    private String id;
     private String name;
 
-    public Vertex(String id, String name) {
-        this.id = id;
+    public Vertex(String name) {
         this.name = name;
-    }
-
-    public String getId() {
-        return id;
     }
 
     public String getName() {
@@ -25,15 +19,12 @@ public class Vertex {
 
         Vertex vertex = (Vertex) o;
 
-        if (id != null ? !id.equals(vertex.id) : vertex.id != null) return false;
         return name != null ? name.equals(vertex.name) : vertex.name == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
+        return name != null ? name.hashCode() : 0;
     }
 
     @Override

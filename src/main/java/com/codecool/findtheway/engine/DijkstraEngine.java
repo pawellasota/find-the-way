@@ -1,5 +1,6 @@
 package com.codecool.findtheway.engine;
 
+
 import com.codecool.findtheway.model.Edge;
 import com.codecool.findtheway.model.Graph;
 import com.codecool.findtheway.model.Vertex;
@@ -10,7 +11,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
 
 public class DijkstraEngine {
 

@@ -2,6 +2,6 @@ Warsaw Paris 100
 Paris Lisboa 300
 Lisboa London 250
 Warsaw London 450
-London Athens 500
+London Bombay 500
 Lisboa Athens 800
 Warsaw Athens
